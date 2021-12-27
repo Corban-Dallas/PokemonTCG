@@ -93,13 +93,13 @@
 		F77279382779BD8000E7A249 /* PokemonTCG */ = {
 			isa = PBXGroup;
 			children = (
-				F77279502779BDED00E7A249 /* Assets.xcassets */,
-				F77279512779BDED00E7A249 /* Model */,
-				F77279542779BDED00E7A249 /* ModelView */,
-				F772794B2779BDED00E7A249 /* Network */,
-				F77279582779BDED00E7A249 /* Views */,
-				F77279472779BDD700E7A249 /* ContentView.swift */,
 				F77279482779BDD700E7A249 /* PokemonTCGApp.swift */,
+				F77279472779BDD700E7A249 /* ContentView.swift */,
+				F77279512779BDED00E7A249 /* Model */,
+				F772794B2779BDED00E7A249 /* Network */,
+				F77279542779BDED00E7A249 /* ModelView */,
+				F77279582779BDED00E7A249 /* Views */,
+				F77279502779BDED00E7A249 /* Assets.xcassets */,
 				F772793F2779BD8100E7A249 /* Preview Content */,
 			);
 			path = PokemonTCG;
@@ -148,12 +148,12 @@
 		F77279582779BDED00E7A249 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F77279592779BDED00E7A249 /* Constants.swift */,
 				F772795A2779BDED00E7A249 /* CardsBrowser */,
 				F772795E2779BDED00E7A249 /* CardDetail.swift */,
 				F772795F2779BDED00E7A249 /* CardView.swift */,
 				F77279602779BDED00E7A249 /* SearchParametersView.swift */,
 				F77279612779BDED00E7A249 /* UserDeckView.swift */,
+				F77279592779BDED00E7A249 /* Constants.swift */,
 				F77279622779BDED00E7A249 /* Utility.swift */,
 			);
 			path = Views;

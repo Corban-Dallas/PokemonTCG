@@ -18,8 +18,7 @@ struct CardScrollGrid: View {
     @Binding var cards: [Card]
     var onScrolledAtBottom: () async -> Void
     var loadingIsAvailable: Bool
-    
-    // UI logic
+    //
     @EnvironmentObject var decksStore: UserDecksStore
     //
     // MARK: - Constants
@@ -33,6 +32,7 @@ struct CardScrollGrid: View {
             LazyVGrid(columns: gridItems, spacing: 0) {
                 ForEach(cards) { card in
                     CardView(card: card)
+                        .animation(.easeInOut, value: cards)
                         .onAppear {
                             if cards.last == card {
                                 Task { await onScrolledAtBottom() }
@@ -51,7 +51,6 @@ struct CardScrollGrid: View {
                                 Label("Create new", systemImage: "plus")
                             }
                         }
-
                 }
             }
             .padding(.horizontal)

@@ -39,6 +39,11 @@ struct ContentView: View {
                         userDecks
                     }
                     .navigationTitle("User decks")
+                    .toolbar {
+                        ToolbarItem {
+                            newDeckButton
+                        }
+                    }
                 }
                 .tabItem {
                     Label("Decks", systemImage: "lanyardcard")
@@ -57,8 +62,14 @@ struct ContentView: View {
                         userDecks
                     }
                 }
+                
                 .listStyle(.sidebar)
                 .navigationTitle("Pokemon TCG")
+                .toolbar {
+                    ToolbarItem {
+                        newDeckButton
+                    }
+                }
             }
         }
     }
@@ -87,6 +98,16 @@ struct ContentView: View {
     
     private var browserLabel: some View {
         Label("Browser", systemImage: "square.grid.2x2")
+    }
+    
+    private var newDeckButton: some View {
+        Button {
+            withAnimation {
+                deckStore.addDeck(UserDeck(name: "New deck"))
+            }
+        } label: {
+            Label("New deck", systemImage: "plus")
+        }
     }
 }
 

@@ -34,7 +34,6 @@ struct CardsBrowser: View {
                     .navigationTitle("Search results")
             }
         }
-        
         .onAppear {
             print("CardBrowwser appears")
         }
