@@ -2,7 +2,7 @@
 //  PokemonTCGApp.swift
 //  PokemonTCG
 //
-//  Created by Григорий Кривякин on 27.12.2021.
+//  Created by Григорий Кривякин on 24.12.2021.
 //
 
 import SwiftUI
