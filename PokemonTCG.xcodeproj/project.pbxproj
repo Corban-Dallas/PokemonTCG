@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		F70D8096277C35050053092A /* ContentView_iPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70D8095277C35050053092A /* ContentView_iPad.swift */; };
 		F70D8098277C35EB0053092A /* ContentView_iPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70D8097277C35EB0053092A /* ContentView_iPhone.swift */; };
+		F71F3AEF277C7B3F00A17E52 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = F71F3AEE277C7B3F00A17E52 /* OrderedCollections */; };
+		F71F3AF2277C97AC00A17E52 /* CardView-ItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F3AF1277C97AC00A17E52 /* CardView-ItemProvider.swift */; };
+		F71F3AF4277C988400A17E52 /* Card-DragAndDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F3AF3277C988400A17E52 /* Card-DragAndDrop.swift */; };
 		F77279412779BD8100E7A249 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77279402779BD8100E7A249 /* Preview Assets.xcassets */; };
 		F77279492779BDD700E7A249 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77279472779BDD700E7A249 /* ContentView.swift */; };
 		F772794A2779BDD700E7A249 /* PokemonTCGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77279482779BDD700E7A249 /* PokemonTCGApp.swift */; };
-		F77279632779BDED00E7A249 /* PokemonAPI.Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772794C2779BDED00E7A249 /* PokemonAPI.Wrapper.swift */; };
+		F77279632779BDED00E7A249 /* PokemonAPI.Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772794C2779BDED00E7A249 /* PokemonAPI.Response.swift */; };
 		F77279642779BDED00E7A249 /* PokemonAPI.SearchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772794D2779BDED00E7A249 /* PokemonAPI.SearchParameters.swift */; };
 		F77279652779BDED00E7A249 /* CachedImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772794E2779BDED00E7A249 /* CachedImageFetcher.swift */; };
 		F77279662779BDED00E7A249 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772794F2779BDED00E7A249 /* PokemonAPI.swift */; };
@@ -30,7 +33,6 @@
 		F77279722779BDED00E7A249 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772795F2779BDED00E7A249 /* CardView.swift */; };
 		F77279732779BDED00E7A249 /* SearchParametersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77279602779BDED00E7A249 /* SearchParametersView.swift */; };
 		F77279742779BDED00E7A249 /* UserDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77279612779BDED00E7A249 /* UserDeckView.swift */; };
-		F77279752779BDED00E7A249 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77279622779BDED00E7A249 /* Utility.swift */; };
 		F77279782779BE1600E7A249 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F77279772779BE1600E7A249 /* Alamofire */; };
 		F772797B2779BE3700E7A249 /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = F77279792779BE3700E7A249 /* cards.json */; };
 		F772797C2779BE3700E7A249 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772797A2779BE3700E7A249 /* Preview.swift */; };
@@ -39,11 +41,14 @@
 /* Begin PBXFileReference section */
 		F70D8095277C35050053092A /* ContentView_iPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView_iPad.swift; sourceTree = "<group>"; };
 		F70D8097277C35EB0053092A /* ContentView_iPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView_iPhone.swift; sourceTree = "<group>"; };
+		F71F3AF0277C95F100A17E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F71F3AF1277C97AC00A17E52 /* CardView-ItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView-ItemProvider.swift"; sourceTree = "<group>"; };
+		F71F3AF3277C988400A17E52 /* Card-DragAndDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card-DragAndDrop.swift"; sourceTree = "<group>"; };
 		F77279362779BD8000E7A249 /* PokemonTCG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonTCG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77279402779BD8100E7A249 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F77279472779BDD700E7A249 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F77279482779BDD700E7A249 /* PokemonTCGApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonTCGApp.swift; sourceTree = "<group>"; };
-		F772794C2779BDED00E7A249 /* PokemonAPI.Wrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonAPI.Wrapper.swift; sourceTree = "<group>"; };
+		F772794C2779BDED00E7A249 /* PokemonAPI.Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonAPI.Response.swift; sourceTree = "<group>"; };
 		F772794D2779BDED00E7A249 /* PokemonAPI.SearchParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonAPI.SearchParameters.swift; sourceTree = "<group>"; };
 		F772794E2779BDED00E7A249 /* CachedImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedImageFetcher.swift; sourceTree = "<group>"; };
 		F772794F2779BDED00E7A249 /* PokemonAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
@@ -61,7 +66,6 @@
 		F772795F2779BDED00E7A249 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F77279602779BDED00E7A249 /* SearchParametersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchParametersView.swift; sourceTree = "<group>"; };
 		F77279612779BDED00E7A249 /* UserDeckView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDeckView.swift; sourceTree = "<group>"; };
-		F77279622779BDED00E7A249 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		F77279792779BE3700E7A249 /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
 		F772797A2779BE3700E7A249 /* Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F71F3AEF277C7B3F00A17E52 /* OrderedCollections in Frameworks */,
 				F77279782779BE1600E7A249 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F71F3AF5277C9D3C00A17E52 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F71F3AF3277C988400A17E52 /* Card-DragAndDrop.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		F772792D2779BD8000E7A249 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +110,7 @@
 		F77279382779BD8000E7A249 /* PokemonTCG */ = {
 			isa = PBXGroup;
 			children = (
+				F71F3AF0277C95F100A17E52 /* Info.plist */,
 				F77279482779BDD700E7A249 /* PokemonTCGApp.swift */,
 				F77279472779BDD700E7A249 /* ContentView.swift */,
 				F70D8095277C35050053092A /* ContentView_iPad.swift */,
@@ -124,10 +138,10 @@
 		F772794B2779BDED00E7A249 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				F772794C2779BDED00E7A249 /* PokemonAPI.Wrapper.swift */,
-				F772794D2779BDED00E7A249 /* PokemonAPI.SearchParameters.swift */,
-				F772794E2779BDED00E7A249 /* CachedImageFetcher.swift */,
 				F772794F2779BDED00E7A249 /* PokemonAPI.swift */,
+				F772794D2779BDED00E7A249 /* PokemonAPI.SearchParameters.swift */,
+				F772794C2779BDED00E7A249 /* PokemonAPI.Response.swift */,
+				F772794E2779BDED00E7A249 /* CachedImageFetcher.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -144,9 +158,9 @@
 		F77279542779BDED00E7A249 /* ModelView */ = {
 			isa = PBXGroup;
 			children = (
+				F77279572779BDED00E7A249 /* CardStore.swift */,
 				F77279552779BDED00E7A249 /* SearchEngine.swift */,
 				F77279562779BDED00E7A249 /* UserDecksStore.swift */,
-				F77279572779BDED00E7A249 /* CardStore.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -157,10 +171,11 @@
 				F772795A2779BDED00E7A249 /* CardsBrowser */,
 				F77279612779BDED00E7A249 /* UserDeckView.swift */,
 				F772795F2779BDED00E7A249 /* CardView.swift */,
+				F71F3AF1277C97AC00A17E52 /* CardView-ItemProvider.swift */,
 				F772795E2779BDED00E7A249 /* CardDetail.swift */,
 				F77279602779BDED00E7A249 /* SearchParametersView.swift */,
 				F77279592779BDED00E7A249 /* Constants.swift */,
-				F77279622779BDED00E7A249 /* Utility.swift */,
+				F71F3AF5277C9D3C00A17E52 /* Utility */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +208,7 @@
 			name = PokemonTCG;
 			packageProductDependencies = (
 				F77279772779BE1600E7A249 /* Alamofire */,
+				F71F3AEE277C7B3F00A17E52 /* OrderedCollections */,
 			);
 			productName = PokemonTCG;
 			productReference = F77279362779BD8000E7A249 /* PokemonTCG.app */;
@@ -225,6 +241,7 @@
 			mainGroup = F772792D2779BD8000E7A249;
 			packageReferences = (
 				F77279762779BE1600E7A249 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F71F3AED277C7B3F00A17E52 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = F77279372779BD8000E7A249 /* Products */;
 			projectDirPath = "";
@@ -253,8 +270,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F77279752779BDED00E7A249 /* Utility.swift in Sources */,
 				F772794A2779BDD700E7A249 /* PokemonTCGApp.swift in Sources */,
+				F71F3AF2277C97AC00A17E52 /* CardView-ItemProvider.swift in Sources */,
 				F772796E2779BDED00E7A249 /* CardsBrowser.swift in Sources */,
 				F77279652779BDED00E7A249 /* CachedImageFetcher.swift in Sources */,
 				F772797C2779BE3700E7A249 /* Preview.swift in Sources */,
@@ -265,9 +282,10 @@
 				F772796B2779BDED00E7A249 /* UserDecksStore.swift in Sources */,
 				F77279712779BDED00E7A249 /* CardDetail.swift in Sources */,
 				F77279492779BDD700E7A249 /* ContentView.swift in Sources */,
+				F71F3AF4277C988400A17E52 /* Card-DragAndDrop.swift in Sources */,
 				F70D8098277C35EB0053092A /* ContentView_iPhone.swift in Sources */,
 				F772796A2779BDED00E7A249 /* SearchEngine.swift in Sources */,
-				F77279632779BDED00E7A249 /* PokemonAPI.Wrapper.swift in Sources */,
+				F77279632779BDED00E7A249 /* PokemonAPI.Response.swift in Sources */,
 				F77279742779BDED00E7A249 /* UserDeckView.swift in Sources */,
 				F772796C2779BDED00E7A249 /* CardStore.swift in Sources */,
 				F77279692779BDED00E7A249 /* UserDeck.swift in Sources */,
@@ -410,6 +428,7 @@
 				DEVELOPMENT_TEAM = J4AL2MH8ZC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PokemonTCG/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -442,6 +461,7 @@
 				DEVELOPMENT_TEAM = J4AL2MH8ZC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PokemonTCG/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -485,6 +505,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F71F3AED277C7B3F00A17E52 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		F77279762779BE1600E7A249 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -496,6 +524,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F71F3AEE277C7B3F00A17E52 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F71F3AED277C7B3F00A17E52 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
 		F77279772779BE1600E7A249 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F77279762779BE1600E7A249 /* XCRemoteSwiftPackageReference "Alamofire" */;

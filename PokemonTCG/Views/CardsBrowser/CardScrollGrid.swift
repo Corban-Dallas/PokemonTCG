@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import OrderedCollections
 
 //
 // MARK: - Infinte verticaly scrolled grid of cards
@@ -15,9 +16,15 @@ struct CardScrollGrid: View {
     // MARK: - Properties
     //
     // Initializing parameters
-    @Binding var cards: [Card]
+    @Binding var cards: OrderedSet<Card>
     var onScrolledAtBottom: () async -> Void
     var loadingIsAvailable: Bool
+    
+//    init(cards: Binding<T>, onScrolledAtBottom: @escaping (() -> Void), loadingIsAvailable: Bool) {
+//        self._cards = cards
+//        self.onScrolledAtBottom = onScrolledAtBottom
+//        self.loadingIsAvailable = loadingIsAvailable
+//    }
     
     @EnvironmentObject var decksStore: UserDecksStore
     //

@@ -6,13 +6,15 @@
 //
 
 import Foundation
+import OrderedCollections
 
 @MainActor class SearchEngine: ObservableObject {
     //
     // MARK: - Properties
     //
-    @Published var results = [Card]()
+    @Published var results = OrderedSet<Card>()
     @Published var status: SearchStatus = .idle
+    private(set) var availableTypes: OrderedSet<String> = ["Fire", "Water"]
     
     private var pagesFetched: Int = 0
     private(set) var parameters = PokemonAPI.SearchParameters()
@@ -20,6 +22,16 @@ import Foundation
     // MARK: - Constants
     //
     private let defaultPageSize = 25
+    //
+    // MARK: - Initialization
+    //
+    init() {
+        Task {
+            if let types = await PokemonAPI.shared.fetchTypes() {
+                self.availableTypes = OrderedSet(types)
+            }
+        }
+    }
     //
     // MARK: - Class methods
     //

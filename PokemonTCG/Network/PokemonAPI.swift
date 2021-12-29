@@ -19,7 +19,7 @@ struct PokemonAPI {
     //
     // MARK: - Properties
     //
-    private let baseURL = "https://api.pokemontcg.io/v2/cards"
+    private let baseURL = "https://api.pokemontcg.io/v2"
     //
     // MARK: - Fetch cards
     //
@@ -31,21 +31,25 @@ struct PokemonAPI {
         if let filter = filter {
             parameters["q"] = Self.filterUrlParameters(filter: filter)
         }
-        return try? await AF.request(baseURL, parameters: parameters)
-//            .cURLDescription() {
-//                print($0.description)
-//            }
+        return try? await AF.request(baseURL + "/cards", parameters: parameters)
             .validate()
-            .serializingDecodable(Wrapper.self)
-            .value.cards
+            .serializingDecodable(Response<[Card]>.self)
+            .value.data
+    }
+    // Request set of all available card types
+    func fetchTypes() async -> Set<String>? {
+        return try? await AF.request(baseURL + "/types")
+            .validate()
+            .serializingDecodable(Response<Set<String>>.self)
+            .value.data
     }
     //
     // MARK: - Utility
     //
     static private func filterUrlParameters(filter: SearchParameters) -> String {
         var question = ""
-        if filter.type != .allTypes {
-            question += "types:" + filter.type.rawValue
+        if !filter.type.isEmpty {
+            question += "types:" + filter.type
         }
         if !filter.name.isEmpty {
             question += " name:" + filter.name

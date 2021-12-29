@@ -34,7 +34,7 @@ struct UserDeckView: View {
                             .contextMenu {
                                 Button("Remove", role: .destructive) {
                                     withAnimation {
-                                        deck.removeCard(card.wrappedValue)
+                                        deckStore.remove(card: card.wrappedValue, from: deck)
                                     }
                                 }
                             }
@@ -55,11 +55,6 @@ struct UserDeckView: View {
                     .frame(width: 300, height: 130)
             }
         }
-        .onAppear {
-//            let index = deckStore.decks.firstIndex(where: {deck.id == $0.id })!
-//            _deck = $deckStore.decks[index]
-        }
-        
     }
     //
     // MARK: - UI blocks
@@ -75,8 +70,4 @@ struct UserDeckView: View {
             }
         }
     }
-    //
-    // MARK: - User intents
-    //
-    // Select or unselect card
 }

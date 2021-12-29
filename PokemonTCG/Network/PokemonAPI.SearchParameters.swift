@@ -12,22 +12,12 @@ import Foundation
 extension PokemonAPI {
     struct SearchParameters: Equatable {
         //
-        // MARK: - Parameters properties
+        // MARK: - Search properties
         //
         var name = ""
-        var type = Types.allTypes
-        //
-        // MARK: -
-        enum Types: String, CaseIterable, Identifiable {
-            case allTypes = "All types"
-            case grass
-            case fire
-            case water
-            
-            var id: String { self.rawValue }
-        }
+        var type = ""
         
-        var isDefault: Bool {
+        var isEmpty: Bool {
             self == SearchParameters()
         }
     }

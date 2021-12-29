@@ -56,3 +56,11 @@ extension Card: Equatable {
         lhs.id == rhs.id
     }
 }
+//
+// MARK: - Hashable
+//
+extension Card: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id)
+    }
+}

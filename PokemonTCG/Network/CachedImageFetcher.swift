@@ -13,11 +13,18 @@ import UIKit
 // for each ImageCache instance.
 
 public class CachedImageFetcher {
+    //
+    // MARK: - Singleton
+    //
     static let shared = CachedImageFetcher()
-
+    //
+    // MARK: - Parameters
+    //
     private let cachedSession: URLSession
     private let cache: URLCache
-
+    //
+    // MARK: - Initialization
+    //
     private init(memoryCapacity: Int = 10_000_000, diskCapacity: Int = 1_000_000_000) {
         // Create URLCache
         let cachesURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
@@ -31,7 +38,9 @@ public class CachedImageFetcher {
         
         print("Current cache disk usage: \(cache.currentDiskUsage)")
     }
-    
+    //
+    // MARK: Public methods
+    //
     // Get image from network or cache.
     func getImage(from url: URL) async -> UIImage? {
         do {

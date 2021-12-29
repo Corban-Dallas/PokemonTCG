@@ -50,6 +50,15 @@ struct ContentView: View {
             } label: {
                 Label(deck.wrappedValue.name, systemImage: "lanyardcard")
             }
+            .onDrop(of: [Card.draggableType.identifier], isTargeted: nil) { providers in
+                Card.fromItemProvider(providers[0]) { card in
+                    guard let card = card else { return }
+                    DispatchQueue.main.async {
+                        decksStore.addCard(card, to: deck.wrappedValue)
+                    }
+                }
+                return true
+            }
         }
         .onDelete { indices in
             decksStore.decks.remove(atOffsets: indices)

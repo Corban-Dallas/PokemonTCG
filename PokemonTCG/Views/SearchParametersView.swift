@@ -31,8 +31,9 @@ struct SearchParametersView: View {
                 // Filter by type
                 Section(header: Text("Types")) {
                     Picker("Types", selection: $parameters.type) {
-                        ForEach(PokemonAPI.SearchParameters.Types.allCases) { type in
-                            Text(type.rawValue.capitalized).tag(type)
+                        Text("All types").tag("")
+                        ForEach(searchEngine.availableTypes, id: \.self) { type in
+                            Text(type).tag(type)
                         }
                     }
                 }
@@ -61,7 +62,7 @@ struct SearchParametersView: View {
     //
     private var applyButton: some View {
         Button("Apply") {
-            if parameters.isDefault {
+            if parameters.isEmpty {
                 searchEngine.resetResults()
             } else {
                 searchEngine.changeSearchParameters(on: parameters)

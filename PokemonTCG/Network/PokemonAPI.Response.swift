@@ -1,5 +1,5 @@
 //
-//  PokemonAPI.Wrapper.swift
+//  PokemonAPI.Response.swift
 //  PokemonTCG
 //
 //  Created by Григорий Кривякин on 25.12.2021.
@@ -9,9 +9,9 @@ import Foundation
 //
 // MARK: Cards respond wrapper
 //
-struct Wrapper: Decodable {
+struct Response<T: Decodable>: Decodable {
     enum CodingKeys: String, CodingKey {
-        case cards = "data"
+        case data = "data"
     }
-    let cards: [Card]
+    let data: T
 }

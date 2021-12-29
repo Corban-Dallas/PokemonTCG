@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OrderedCollections
 import Combine
 import SwiftUI
 
@@ -13,7 +14,7 @@ import SwiftUI
     //
     // MARK: - Properties
     //
-    @Published var cards = [Card]()
+    @Published var cards = OrderedSet<Card>()
     @Published var canLoadNextPage = true
 
     private var fetchedPages: Int = 0

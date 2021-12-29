@@ -51,6 +51,9 @@ struct CardView: View {
                     self.image = nil
                 }
         }
+        .onDrag {
+            card.itemProvider
+        }
     }
 }
 //
