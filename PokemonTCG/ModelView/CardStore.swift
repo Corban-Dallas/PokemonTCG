@@ -7,8 +7,8 @@
 
 import Foundation
 import OrderedCollections
-import Combine
-import SwiftUI
+//import Combine
+//import SwiftUI
 
 @MainActor class CardStore: ObservableObject {
     //
@@ -40,13 +40,5 @@ import SwiftUI
         }
         fetchedPages += 1
         self.cards.append(contentsOf: cards)
-    }
-}
-
-extension CardStore {
-    static func preview() -> CardStore {
-        let store = CardStore()
-        //store.cardsUrl = Bundle.main.url(forResource: "cards", withExtension: "json")!
-        return store
     }
 }

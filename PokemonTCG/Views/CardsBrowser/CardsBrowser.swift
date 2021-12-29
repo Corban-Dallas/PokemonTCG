@@ -34,9 +34,6 @@ struct CardsBrowser: View {
                     .navigationTitle("Search results")
             }
         }
-        .onAppear {
-            print("CardBrowwser appears")
-        }
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 if searchEngine.status != .idle {

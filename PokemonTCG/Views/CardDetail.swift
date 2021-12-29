@@ -8,6 +8,8 @@
 import SwiftUI
 import Combine
 
+/// High resolution card. View shows preview card until download high resolution version.
+/// Preview is low resolution image (if exists in cache) or static placeholder image.
 struct CardDetail: View {
     //
     // MARK: - Properties

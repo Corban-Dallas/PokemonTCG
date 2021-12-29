@@ -50,7 +50,7 @@ extension Card: Codable {
 //
 // MARK: - Equatable
 extension Card: Equatable {
-    // Some optimisation. We trast that server always provides us same
+    // Some optimisation. We trust that server always provides us same
     // cards with same identifiers and all identifiers are unique.
     static func ==(lhs: Card, rhs: Card) -> Bool {
         lhs.id == rhs.id

@@ -10,7 +10,6 @@
 		F70D8096277C35050053092A /* ContentView_iPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70D8095277C35050053092A /* ContentView_iPad.swift */; };
 		F70D8098277C35EB0053092A /* ContentView_iPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70D8097277C35EB0053092A /* ContentView_iPhone.swift */; };
 		F71F3AEF277C7B3F00A17E52 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = F71F3AEE277C7B3F00A17E52 /* OrderedCollections */; };
-		F71F3AF2277C97AC00A17E52 /* CardView-ItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F3AF1277C97AC00A17E52 /* CardView-ItemProvider.swift */; };
 		F71F3AF4277C988400A17E52 /* Card-DragAndDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F3AF3277C988400A17E52 /* Card-DragAndDrop.swift */; };
 		F77279412779BD8100E7A249 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77279402779BD8100E7A249 /* Preview Assets.xcassets */; };
 		F77279492779BDD700E7A249 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77279472779BDD700E7A249 /* ContentView.swift */; };
@@ -42,7 +41,6 @@
 		F70D8095277C35050053092A /* ContentView_iPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView_iPad.swift; sourceTree = "<group>"; };
 		F70D8097277C35EB0053092A /* ContentView_iPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView_iPhone.swift; sourceTree = "<group>"; };
 		F71F3AF0277C95F100A17E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		F71F3AF1277C97AC00A17E52 /* CardView-ItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView-ItemProvider.swift"; sourceTree = "<group>"; };
 		F71F3AF3277C988400A17E52 /* Card-DragAndDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card-DragAndDrop.swift"; sourceTree = "<group>"; };
 		F77279362779BD8000E7A249 /* PokemonTCG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonTCG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77279402779BD8100E7A249 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 				F772795A2779BDED00E7A249 /* CardsBrowser */,
 				F77279612779BDED00E7A249 /* UserDeckView.swift */,
 				F772795F2779BDED00E7A249 /* CardView.swift */,
-				F71F3AF1277C97AC00A17E52 /* CardView-ItemProvider.swift */,
 				F772795E2779BDED00E7A249 /* CardDetail.swift */,
 				F77279602779BDED00E7A249 /* SearchParametersView.swift */,
 				F77279592779BDED00E7A249 /* Constants.swift */,
@@ -271,7 +268,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F772794A2779BDD700E7A249 /* PokemonTCGApp.swift in Sources */,
-				F71F3AF2277C97AC00A17E52 /* CardView-ItemProvider.swift in Sources */,
 				F772796E2779BDED00E7A249 /* CardsBrowser.swift in Sources */,
 				F77279652779BDED00E7A249 /* CachedImageFetcher.swift in Sources */,
 				F772797C2779BE3700E7A249 /* Preview.swift in Sources */,

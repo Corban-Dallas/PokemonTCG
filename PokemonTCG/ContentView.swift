@@ -17,8 +17,6 @@ struct ContentView: View {
     @StateObject var searchEngine = SearchEngine()
     
     // UI logic
-    @State var showBrowser = false
-
     static let isPhone = UIDevice.current.userInterfaceIdiom == .phone
     //
     // MARK: - Body
