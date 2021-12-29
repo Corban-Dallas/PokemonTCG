@@ -12,6 +12,7 @@ struct PokemonTCGApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .coordinateSpace(name: "global")
         }
     }
 }

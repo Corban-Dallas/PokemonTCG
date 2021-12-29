@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F70D8096277C35050053092A /* ContentView_iPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70D8095277C35050053092A /* ContentView_iPad.swift */; };
+		F70D8098277C35EB0053092A /* ContentView_iPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70D8097277C35EB0053092A /* ContentView_iPhone.swift */; };
 		F77279412779BD8100E7A249 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77279402779BD8100E7A249 /* Preview Assets.xcassets */; };
 		F77279492779BDD700E7A249 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77279472779BDD700E7A249 /* ContentView.swift */; };
 		F772794A2779BDD700E7A249 /* PokemonTCGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77279482779BDD700E7A249 /* PokemonTCGApp.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F70D8095277C35050053092A /* ContentView_iPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView_iPad.swift; sourceTree = "<group>"; };
+		F70D8097277C35EB0053092A /* ContentView_iPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView_iPhone.swift; sourceTree = "<group>"; };
 		F77279362779BD8000E7A249 /* PokemonTCG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonTCG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77279402779BD8100E7A249 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F77279472779BDD700E7A249 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 			children = (
 				F77279482779BDD700E7A249 /* PokemonTCGApp.swift */,
 				F77279472779BDD700E7A249 /* ContentView.swift */,
+				F70D8095277C35050053092A /* ContentView_iPad.swift */,
+				F70D8097277C35EB0053092A /* ContentView_iPhone.swift */,
 				F77279512779BDED00E7A249 /* Model */,
 				F772794B2779BDED00E7A249 /* Network */,
 				F77279542779BDED00E7A249 /* ModelView */,
@@ -149,10 +155,10 @@
 			isa = PBXGroup;
 			children = (
 				F772795A2779BDED00E7A249 /* CardsBrowser */,
-				F772795E2779BDED00E7A249 /* CardDetail.swift */,
-				F772795F2779BDED00E7A249 /* CardView.swift */,
-				F77279602779BDED00E7A249 /* SearchParametersView.swift */,
 				F77279612779BDED00E7A249 /* UserDeckView.swift */,
+				F772795F2779BDED00E7A249 /* CardView.swift */,
+				F772795E2779BDED00E7A249 /* CardDetail.swift */,
+				F77279602779BDED00E7A249 /* SearchParametersView.swift */,
 				F77279592779BDED00E7A249 /* Constants.swift */,
 				F77279622779BDED00E7A249 /* Utility.swift */,
 			);
@@ -259,12 +265,14 @@
 				F772796B2779BDED00E7A249 /* UserDecksStore.swift in Sources */,
 				F77279712779BDED00E7A249 /* CardDetail.swift in Sources */,
 				F77279492779BDD700E7A249 /* ContentView.swift in Sources */,
+				F70D8098277C35EB0053092A /* ContentView_iPhone.swift in Sources */,
 				F772796A2779BDED00E7A249 /* SearchEngine.swift in Sources */,
 				F77279632779BDED00E7A249 /* PokemonAPI.Wrapper.swift in Sources */,
 				F77279742779BDED00E7A249 /* UserDeckView.swift in Sources */,
 				F772796C2779BDED00E7A249 /* CardStore.swift in Sources */,
 				F77279692779BDED00E7A249 /* UserDeck.swift in Sources */,
 				F77279732779BDED00E7A249 /* SearchParametersView.swift in Sources */,
+				F70D8096277C35050053092A /* ContentView_iPad.swift in Sources */,
 				F772796D2779BDED00E7A249 /* Constants.swift in Sources */,
 				F77279722779BDED00E7A249 /* CardView.swift in Sources */,
 				F77279702779BDED00E7A249 /* CardScrollGrid.swift in Sources */,
@@ -405,6 +413,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -436,6 +445,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

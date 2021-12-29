@@ -12,12 +12,9 @@ struct UserDeckView: View {
     // Data source
     @Binding var deck: UserDeck
     @EnvironmentObject var deckStore: UserDecksStore
-    
+        
     // UI logic
-    @State var editMode: EditMode = .inactive
-    @State var selection: [Card] = []
-    
-    @Namespace var animation
+    @State var showEditor = false
     //
     // MARK: - Constants
     //
@@ -28,10 +25,6 @@ struct UserDeckView: View {
     //
     var body: some View {
         ScrollView {
-            // Edit deck name
-            if editMode.isEditing {
-                TextField("Deck name", text: $deck.name).font(.title)
-            }
             // Cards grid
             LazyVGrid(columns: gridItems) {
                 ForEach($deck.cards) { card in
@@ -45,83 +38,45 @@ struct UserDeckView: View {
                                     }
                                 }
                             }
-                            .onTapGesture {
-                                if editMode.isEditing {
-                                    selectCard(card.wrappedValue)
-                                }
-                            }
-                        // Selection checkmark
-                        if editMode.isEditing, selection.contains(card.wrappedValue) {
-//                            Rectangle()
-//                                .foregroundColor(.black)
-//                                .opacity(0.5)
-                            Self.checkmark
-                                .padding()
-                            
-                        }
-                        
                     }
                 }
             }
         }
-        .navigationTitle(editMode.isEditing ? "" : deck.name)
+        .navigationTitle(deck.name)
         .padding(.horizontal)
         .toolbar {
-            editButton
-            if selection.count > 0 {
-                removeCardsButton
+            Button {
+                showEditor = true
+            } label: {
+                Label("Edit", systemImage: "pencil")
             }
-            removeCardsButton
+            .popover(isPresented: $showEditor) {
+                DeckEditor(deck: $deck)
+                    .frame(width: 300, height: 130)
+            }
         }
+        .onAppear {
+//            let index = deckStore.decks.firstIndex(where: {deck.id == $0.id })!
+//            _deck = $deckStore.decks[index]
+        }
+        
     }
     //
     // MARK: - UI blocks
     //
-    static let checkmark: some View = {
-        Image(systemName: "checkmark.circle.fill")
-            .resizable()
-            .frame(width: checkmarkSize, height: checkmarkSize)
-            .foregroundColor(.blue)
-            .background(Circle().foregroundColor(.black))
-            .shadow(color: .black, radius: 2)
-    }()
-    
-    private var editButton: some View {
-        Button {
-            withAnimation {
-                editMode.toggle()
-            }
-            if editMode == .inactive {
-                selection.removeAll()
-            }
-        } label: {
-            Text(editMode.title)
-        }
-    }
-    
-    private var removeCardsButton: some View {
-        Button(role: .destructive) {
-            withAnimation {
-                selection.forEach {
-                    deck.removeCard($0)
+    struct DeckEditor: View {
+        @Binding var deck: UserDeck
+        
+        var body: some View {
+            List {
+                Section("Name") {
+                    TextField("Name", text: $deck.name)
                 }
             }
-            selection.removeAll()
-        } label: {
-            Image(systemName: "trash")
-                .resizable()
-            //Label("Remove", systemImage: "trash")
         }
     }
     //
     // MARK: - User intents
     //
     // Select or unselect card
-    private func selectCard(_ card: Card) {
-        if let index = selection.firstIndex(of: card)  {
-            selection.remove(at: index)
-        } else {
-            selection.append(card)
-        }
-    }
 }

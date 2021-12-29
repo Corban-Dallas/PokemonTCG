@@ -30,7 +30,27 @@ extension View {
         self.modifier(Blanked(isBlanked))
     }
 }
+//
+// MARK: - Magnifiy modifier
+//
+struct Magnify: ViewModifier {
+    
+    var isMagnified = false
+    func body(content: Content) -> some View {
+            if isMagnified {
+                content
+                    .frame(width: UIScreen.main.bounds.width)
+            } else {
+                content
+            }
+    }
+}
 
+extension View {
+    func magnified(_ isMagnified: Bool) -> some View {
+        self.modifier(Magnify(isMagnified: isMagnified))
+    }
+}
 //
 // MARK: - Edit mode extension
 //

@@ -13,10 +13,12 @@ struct ContentView: View {
     //
     // Data source
     @StateObject var cardStore = CardStore()
-    @StateObject var deckStore = UserDecksStore()
+    @StateObject var decksStore = UserDecksStore()
     @StateObject var searchEngine = SearchEngine()
     
     // UI logic
+    @State var showBrowser = false
+
     static let isPhone = UIDevice.current.userInterfaceIdiom == .phone
     //
     // MARK: - Body
@@ -24,86 +26,44 @@ struct ContentView: View {
     var body: some View {
         if ContentView.isPhone {
             // Device is iPhone
-            TabView {
-                // Browser
-                NavigationView {
-                    cardsBrowser
-                }
-                .tabItem {
-                    browserLabel
-                }
-                .navigationViewStyle(.automatic)
-                // User decks
-                NavigationView {
-                    List {
-                        userDecks
-                    }
-                    .navigationTitle("User decks")
-                    .toolbar {
-                        ToolbarItem {
-                            newDeckButton
-                        }
-                    }
-                }
-                .tabItem {
-                    Label("Decks", systemImage: "lanyardcard")
-                }
-            }
+            iPhoneContent
         } else {
             // Divice is iPad
-            NavigationView {
-                List {
-                    NavigationLink {
-                        cardsBrowser
-                    } label: {
-                        browserLabel
-                    }
-                    Section("User decks") {
-                        userDecks
-                    }
-                }
-                
-                .listStyle(.sidebar)
-                .navigationTitle("Pokemon TCG")
-                .toolbar {
-                    ToolbarItem {
-                        newDeckButton
-                    }
-                }
-            }
+            iPadContentView
         }
     }
     //
-    // MARK: - UI Blocks
+    // MARK: - Shared UI Blocks
     //
-    private var cardsBrowser: some View {
+    var cardsBrowser: some View {
         CardsBrowser()
             .environmentObject(cardStore)
-            .environmentObject(deckStore)
+            .environmentObject(decksStore)
             .environmentObject(searchEngine)
     }
     
-    private var userDecks: some View {
-        ForEach($deckStore.decks) { deck in
+    var userDecks: some View {
+        ForEach($decksStore.decks) { deck in
             NavigationLink {
                 UserDeckView(deck: deck)
+                    .environmentObject(decksStore)
             } label: {
                 Label(deck.wrappedValue.name, systemImage: "lanyardcard")
             }
         }
         .onDelete { indices in
-            deckStore.decks.remove(atOffsets: indices)
+            decksStore.decks.remove(atOffsets: indices)
         }
     }
     
-    private var browserLabel: some View {
+    var browserLabel: some View {
         Label("Browser", systemImage: "square.grid.2x2")
     }
     
-    private var newDeckButton: some View {
+    var newDeckButton: some View {
         Button {
             withAnimation {
-                deckStore.addDeck(UserDeck(name: "New deck"))
+                decksStore.addDeck(UserDeck(name: "New deck"))
             }
         } label: {
             Label("New deck", systemImage: "plus")

@@ -66,7 +66,7 @@ struct CardsBrowser: View {
         Button {
             showSearchParameters = true
         } label: {
-            Label("Search", systemImage: "magnifyingglass")
+            Label("Search", systemImage: mode == .browser ? "magnifyingglass" : "magnifyingglass.circle.fill")
         }
     }
     
