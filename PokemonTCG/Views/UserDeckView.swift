@@ -14,7 +14,9 @@ struct UserDeckView: View {
     @EnvironmentObject var deckStore: UserDecksStore
         
     // UI logic
-    @State var showEditor = false
+    @State private var showEditor = false
+    @FocusState private var editorFocused: Bool
+    
     //
     // MARK: - Constants
     //
@@ -60,18 +62,27 @@ struct UserDeckView: View {
                 if showEditor {
                     TextField("Deck name", text: $deck.name)
                         .textFieldStyle(.roundedBorder)
+                        .focused($editorFocused)
+                        .onSubmit {
+                            showEditor = false
+                        }
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                editorFocused = true
+                            }
+                            
+                        }
+                        .onChange(of: editorFocused) { isFocused in
+                            if !isFocused {
+                                showEditor = false
+                            }
+                        }
                 }
                 Button {
                     showEditor.toggle()
                 } label: {
-                    Label("Edit", systemImage: "pencil")
+                    Label("Rename", systemImage: "pencil")
                 }
-//                .popover(isPresented: $showEditor) {
-//                    DeckEditor(deck: $deck)
-//                        .frame(width: 300, height: 130)
-//                }
-
-
             }
         }
     }
