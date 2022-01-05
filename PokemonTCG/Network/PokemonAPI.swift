@@ -21,7 +21,7 @@ struct PokemonAPI {
     //
     private let baseURL = "https://api.pokemontcg.io/v2"
     //
-    // MARK: - Fetch cards
+    // MARK: - Public methods
     //
     func fetchCards(page: Int = 1, pageSize: Int = 25, filter: SearchParameters? = nil) async -> [Card]? {
         var parameters = [
@@ -42,6 +42,28 @@ struct PokemonAPI {
             .validate()
             .serializingDecodable(Response<Set<String>>.self)
             .value.data
+    }
+    //
+    // MARK: - Search properties
+    //
+    struct SearchParameters: Equatable {
+        var name = ""
+        var type = ""
+        //
+        // MARK: -
+        //
+        var isEmpty: Bool {
+            self == SearchParameters()
+        }
+    }
+    //
+    // MARK: Respond wrapper
+    //
+    struct Response<T: Decodable>: Decodable {
+        enum CodingKeys: String, CodingKey {
+            case data = "data"
+        }
+        let data: T
     }
     //
     // MARK: - Utility

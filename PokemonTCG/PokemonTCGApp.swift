@@ -9,10 +9,14 @@ import SwiftUI
 
 @main
 struct PokemonTCGApp: App {
+    @StateObject var cardStore = CardStore()
+    @StateObject var decksStore = UserDecksStore()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .coordinateSpace(name: "global")
+                .environmentObject(cardStore)
+                .environmentObject(decksStore)
         }
     }
 }

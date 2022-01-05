@@ -14,8 +14,6 @@
 		F77279412779BD8100E7A249 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77279402779BD8100E7A249 /* Preview Assets.xcassets */; };
 		F77279492779BDD700E7A249 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77279472779BDD700E7A249 /* ContentView.swift */; };
 		F772794A2779BDD700E7A249 /* PokemonTCGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77279482779BDD700E7A249 /* PokemonTCGApp.swift */; };
-		F77279632779BDED00E7A249 /* PokemonAPI.Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772794C2779BDED00E7A249 /* PokemonAPI.Response.swift */; };
-		F77279642779BDED00E7A249 /* PokemonAPI.SearchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772794D2779BDED00E7A249 /* PokemonAPI.SearchParameters.swift */; };
 		F77279652779BDED00E7A249 /* CachedImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772794E2779BDED00E7A249 /* CachedImageFetcher.swift */; };
 		F77279662779BDED00E7A249 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772794F2779BDED00E7A249 /* PokemonAPI.swift */; };
 		F77279672779BDED00E7A249 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77279502779BDED00E7A249 /* Assets.xcassets */; };
@@ -46,8 +44,6 @@
 		F77279402779BD8100E7A249 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F77279472779BDD700E7A249 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F77279482779BDD700E7A249 /* PokemonTCGApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonTCGApp.swift; sourceTree = "<group>"; };
-		F772794C2779BDED00E7A249 /* PokemonAPI.Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonAPI.Response.swift; sourceTree = "<group>"; };
-		F772794D2779BDED00E7A249 /* PokemonAPI.SearchParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonAPI.SearchParameters.swift; sourceTree = "<group>"; };
 		F772794E2779BDED00E7A249 /* CachedImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedImageFetcher.swift; sourceTree = "<group>"; };
 		F772794F2779BDED00E7A249 /* PokemonAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 		F77279502779BDED00E7A249 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,8 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				F772794F2779BDED00E7A249 /* PokemonAPI.swift */,
-				F772794D2779BDED00E7A249 /* PokemonAPI.SearchParameters.swift */,
-				F772794C2779BDED00E7A249 /* PokemonAPI.Response.swift */,
 				F772794E2779BDED00E7A249 /* CachedImageFetcher.swift */,
 			);
 			path = Network;
@@ -274,14 +268,12 @@
 				F77279682779BDED00E7A249 /* Card.swift in Sources */,
 				F772796F2779BDED00E7A249 /* SearchResults.swift in Sources */,
 				F77279662779BDED00E7A249 /* PokemonAPI.swift in Sources */,
-				F77279642779BDED00E7A249 /* PokemonAPI.SearchParameters.swift in Sources */,
 				F772796B2779BDED00E7A249 /* UserDecksStore.swift in Sources */,
 				F77279712779BDED00E7A249 /* CardDetail.swift in Sources */,
 				F77279492779BDD700E7A249 /* ContentView.swift in Sources */,
 				F71F3AF4277C988400A17E52 /* Card-DragAndDrop.swift in Sources */,
 				F70D8098277C35EB0053092A /* ContentView_iPhone.swift in Sources */,
 				F772796A2779BDED00E7A249 /* SearchEngine.swift in Sources */,
-				F77279632779BDED00E7A249 /* PokemonAPI.Response.swift in Sources */,
 				F77279742779BDED00E7A249 /* UserDeckView.swift in Sources */,
 				F772796C2779BDED00E7A249 /* CardStore.swift in Sources */,
 				F77279692779BDED00E7A249 /* UserDeck.swift in Sources */,

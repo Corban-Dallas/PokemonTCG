@@ -38,7 +38,6 @@ extension Card {
             }
         } else {
             complition(nil)
-            return
         }
     }
 

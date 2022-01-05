@@ -20,12 +20,6 @@ struct CardScrollGrid: View {
     var onScrolledAtBottom: () async -> Void
     var loadingIsAvailable: Bool
     
-//    init(cards: Binding<T>, onScrolledAtBottom: @escaping (() -> Void), loadingIsAvailable: Bool) {
-//        self._cards = cards
-//        self.onScrolledAtBottom = onScrolledAtBottom
-//        self.loadingIsAvailable = loadingIsAvailable
-//    }
-    
     @EnvironmentObject var decksStore: UserDecksStore
     //
     // MARK: - Constants

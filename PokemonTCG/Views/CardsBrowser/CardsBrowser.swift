@@ -22,7 +22,7 @@ struct CardsBrowser: View {
     //
     var body: some View {
         Group {
-            // Main display content
+            // Main view content
             switch mode {
             case .browser:
                 CardScrollGrid(cards: $cardStore.cards,
@@ -44,7 +44,6 @@ struct CardsBrowser: View {
         }
         // Edit search parameters
         .sheet(isPresented: $showSearchParameters) {
-            print("[SearchEngine] Statud \(searchEngine.status)")
             // On dismiss
             if searchEngine.status != .idle {
                 mode = .searchResults

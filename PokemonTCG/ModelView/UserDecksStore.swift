@@ -29,6 +29,7 @@ import Foundation
     // MARK: - Public mathods
     //
     public func remove(card: Card, from deck: UserDeck) {
+        objectWillChange.send()
         guard let deckIndex = decks.firstIndex(where: { $0.id == deck.id })
         else { return }
         guard let cardIndex = decks[deckIndex].cards.firstIndex(where: { $0.id == card.id })

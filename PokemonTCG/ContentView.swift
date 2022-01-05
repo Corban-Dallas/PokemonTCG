@@ -12,8 +12,8 @@ struct ContentView: View {
     // MARK: - Properties
     //
     // Data source
-    @StateObject var cardStore = CardStore()
-    @StateObject var decksStore = UserDecksStore()
+    @EnvironmentObject var cardStore: CardStore
+    @EnvironmentObject var decksStore: UserDecksStore
     @StateObject var searchEngine = SearchEngine()
     
     // UI logic
@@ -31,12 +31,10 @@ struct ContentView: View {
         }
     }
     //
-    // MARK: - Shared UI Blocks
+    // MARK: - Shared between iOS/iPadOS UI blocks
     //
     var cardsBrowser: some View {
         CardsBrowser()
-            .environmentObject(cardStore)
-            .environmentObject(decksStore)
             .environmentObject(searchEngine)
     }
     

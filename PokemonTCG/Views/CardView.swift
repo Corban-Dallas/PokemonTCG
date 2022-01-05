@@ -25,7 +25,6 @@ struct CardView: View {
     
     // UI logic
     @EnvironmentObject var decksStore: UserDecksStore
-    @Environment(\.editMode) var editMode
     //
     // MARK: - Body
     //
@@ -42,7 +41,7 @@ struct CardView: View {
                 .shadow(radius: shadowRadius)
                 .onAppear {
                     guard let url = URL(string: card.smallImageUrl) else { return }
-                    cancellableImage = CachedImageFetcher.shared.getImagePublisher(from: url)
+                    cancellableImage = CachedImageFetcher.shared.fetchImage(from: url)
                         .sink(receiveCompletion: { _ in  },
                               receiveValue: { image in self.image = image})
                 }

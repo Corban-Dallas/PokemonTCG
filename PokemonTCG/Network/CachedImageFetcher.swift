@@ -8,10 +8,9 @@ import Foundation
 import Combine
 import UIKit
 
-// ImageCache class reads image from cache or loads it from network
-// if needed. Cache is implemented by cached URLSession which is unique
-// for each ImageCache instance.
-
+/// CachedImageFetcher  reads image from cache or fetches it from network if needed.
+/// Cache is implemented by custome cached URLSession and is unique for each
+/// CachedImageFetcher instance.
 public class CachedImageFetcher {
     //
     // MARK: - Singleton
@@ -42,7 +41,7 @@ public class CachedImageFetcher {
     // MARK: Public methods
     //
     // Get image from network or cache.
-    func getImage(from url: URL) async -> UIImage? {
+    func fetchImage(from url: URL) async -> UIImage? {
         do {
             let (data, _) =  try await cachedSession.data(from: url)
             return UIImage(data: data)
@@ -52,7 +51,7 @@ public class CachedImageFetcher {
         }
     }
     
-    func getImagePublisher(from url: URL) -> AnyPublisher<UIImage?, Error> {
+    func fetchImage(from url: URL) -> AnyPublisher<UIImage?, Error> {
         let request = URLRequest(url: url)
         return cachedSession
             .dataTaskPublisher(for: request)
@@ -74,7 +73,7 @@ public class CachedImageFetcher {
     }
     
     // Clear cache
-    func clear() {
+    func clearCache() {
         cache.removeAllCachedResponses()
     }
 }

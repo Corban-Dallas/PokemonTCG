@@ -11,7 +11,7 @@ struct Preview {
     static let card: Card = {
         let url = Bundle.main.url(forResource: "cards", withExtension: "json")!
         let data = try! Data(contentsOf: url)
-        let wrapper = try! JSONDecoder().decode(Response<[Card]>.self, from: data)
+        let wrapper = try! JSONDecoder().decode(PokemonAPI.Response<[Card]>.self, from: data)
         return wrapper.data.first!
     }()
 }

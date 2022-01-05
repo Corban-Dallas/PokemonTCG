@@ -33,7 +33,7 @@ struct CardDetail: View {
                 .scaledToFit()
                 .onAppear {
                     guard let url = URL(string: card.largeImageUrl) else { return }
-                    cancellableImage = CachedImageFetcher.shared.getImagePublisher(from: url)
+                    cancellableImage = CachedImageFetcher.shared.fetchImage(from: url)
                         .sink(receiveCompletion: { _ in  },
                               receiveValue: { image in self.image = image})
                 }

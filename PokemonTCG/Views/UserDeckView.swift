@@ -42,17 +42,36 @@ struct UserDeckView: View {
                 }
             }
         }
+        .onDrop(of: [Card.draggableType.identifier], isTargeted: nil) { providers in
+            Card.fromItemProvider(providers[0]) { card in
+                guard let card = card else { return }
+                DispatchQueue.main.async {
+                    withAnimation {
+                        deckStore.addCard(card, to: deck)
+                    }
+                }
+            }
+            return true
+        }
         .navigationTitle(deck.name)
         .padding(.horizontal)
         .toolbar {
-            Button {
-                showEditor = true
-            } label: {
-                Label("Edit", systemImage: "pencil")
-            }
-            .popover(isPresented: $showEditor) {
-                DeckEditor(deck: $deck)
-                    .frame(width: 300, height: 130)
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                if showEditor {
+                    TextField("Deck name", text: $deck.name)
+                        .textFieldStyle(.roundedBorder)
+                }
+                Button {
+                    showEditor.toggle()
+                } label: {
+                    Label("Edit", systemImage: "pencil")
+                }
+//                .popover(isPresented: $showEditor) {
+//                    DeckEditor(deck: $deck)
+//                        .frame(width: 300, height: 130)
+//                }
+
+
             }
         }
     }
