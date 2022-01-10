@@ -6,8 +6,8 @@ Implemented
 - Cachad image fetcher based on Foundation
 - Infinite vertical scrolled grid of cards
 
-Main frameworks
+Stack:
 - SwiftUI
 - Alamofire
 - Combine
-- async/await
+- Apple Collections
